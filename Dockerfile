@@ -88,7 +88,7 @@ RUN apk add --no-cache jq && \
       packages/shared-schemas/package.json > packages/shared-schemas/package.json.tmp && \
     mv packages/shared-schemas/package.json.tmp packages/shared-schemas/package.json
 
-RUN npm ci --omit=dev && npm cache clean --force
+RUN npm ci --omit=dev --workspaces --include-workspace-root && npm cache clean --force
 
 
 # ============================================================
